@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FYC</title>
+<link rel="shortcut icon" href="FYC Rewrite.ico" /><body>
+    <style>
+body {
+  background-image: url('With\ Credit\ Protogen.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style> 
+<body style="background-color:rgb(64, 64, 64);">
+</head>
+<body>
+
+<center><h1>FYC://Ubuntu</h1></center>
+<center><h1>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</h1></center>
+
+<!--Home-->
+<style> 
+.button {
+background-color: rgb(89, 95, 89);
+border: none;
+color: rgb(0, 0, 0);
+padding: 40px 68px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 40px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 12px;
+}
+</style>
+</head>
+<body>
+<a href="index.html" class="button"><center>Home</center></a></center> 
+<!--End--> 
+
+<center><h1>Frist thing we need it a 32bit</h1></center>
+<center><h1>sudo dpkg --add-architecture i386 </h1></center>
+
+<center><h1>Now we need to add the repo</h1></center>
+<center><h1>sudo mkdir -pm755 /etc/apt/keyrings</h1></center>
+<center><h1>sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key</h1></center>
+
+<center><h1>Now find your distro and use the command and enter the command starting with sudo (ONLY DO ONE)</h1></center>
+<center><h1>Ubuntu 22.10 | sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/kinetic/winehq-kinetic.sources </h1></center>
+<center><h1>Ubuntu 22.04 , Linux Mint 21.x  | sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources</h1></center>
+<center><h1>Ubuntu 20.04 , Linux Mint 20.x  | sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/focal/winehq-focal.sources</h1></center>
+<center><h1>Ubuntu 18.04 , Linux Mint 19.x  | sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/bionic/winehq-bionic.sources</h1></center>
+
+<center><h1>Now we need to update our packages</h1></center>
+<center><h1>sudo apt update</h1></center>
+
+<center><h1>Now we install wine (I would say use Development branch)</h1></center>
+<center><h1>Stable branch | sudo apt install --install-recommends winehq-stable</h1></center>
+<center><H1>Development branch | sudo apt install --install-recommends winehq-devel</H1></center>
+<center><h1>Staging branch | sudo apt install --install-recommends winehq-staging</h1></center>
+
+<center><h1>Now when you want to run your .exe file open terminal and type cd then your file path lets say for this the downloads we would type this (cd Downloads)</h1></center>
+<center><p><img src="Screenshot from 2023-03-20 22-42-25.png"></p></center>
+
+<center><n1>And now we run the exe with wine THING.exe</n1></center>
+<center><p><img src="Screenshot from 2023-03-20 22-44-25.png"></p></center>
+
+<center><h1>Now your done</h1></center>
+</body>
+</html>

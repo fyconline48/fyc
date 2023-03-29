@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CodeEditor</title>
+	<style>
+		body {
+			background-color: #1a1a1a;
+			color: white;
+		}
+                body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #1a1a1a;
+        color: white;
+        }
+
+		#text-input-container {
+			display: block;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #333333;
+			z-index: 999;
+		}
+
+		#text-input {
+			display: block;
+			width: 100%;
+			height: calc(100% - 60px);
+			font-size: 20px;
+			border: none;
+			resize: none;
+			outline: none;
+			padding: 10px;
+			box-sizing: border-box;
+			background-color: #444444;
+			color: white;
+		}
+
+		#save-button, #link-button {
+  display: block;
+  margin: 10px auto 0;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+
+		
+
+	</style>
+</head>
+<body>
+
+	<h1>Code editor</h1>
+	<button type="button" onclick="showPrompt()">Open Prompt</button>
+	<script>
+		function showPrompt() {
+			var promptDiv = document.createElement("div");
+			promptDiv.id = "text-input-container";
+			document.body.appendChild(promptDiv);
+
+			var textInput = document.createElement("textarea");
+			textInput.id = "text-input";
+			promptDiv.appendChild(textInput);
+
+			var saveButton = document.createElement("button");
+			saveButton.id = "save-button";
+			saveButton.textContent = "Save";
+			saveButton.addEventListener("click", function() {
+				var text = textInput.value;
+				var filename = "saved-text.txt";
+				var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+
+				saveAs(blob, filename);
+
+				document.body.removeChild(promptDiv);
+			});
+			promptDiv.appendChild(saveButton);
+		}
+
+
+		function saveAs(blob, filename) {
+      if (window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveOrOpenBlob(blob, filename);
+      } else {
+        var elem = window.document.createElement("a");
+        elem.href = window.URL.createObjectURL(blob);
+        elem.download = filename;
+        document.body.appendChild(elem);
+        elem.click();
+        document.body.removeChild(elem);
+      }
+    }
+  </script>
+	
+</body>
+</html>
+
+

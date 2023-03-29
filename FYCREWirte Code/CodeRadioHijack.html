@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CFYC://CodeRadioHijack</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.2/tailwind.min.css">
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<style>
+		body.dark-mode {
+			background-color: #1a202c;
+			color: #fff;
+		}
+	</style>
+</head>
+<body class="bg-gray-100 dark-mode">
+
+	<div class="container mx-auto max-w-xl py-8">
+
+		<h1 class="text-4xl font-bold mb-8 text-center">CFYC://CodeRadioHijack</h1>
+
+		<div class="mb-4">
+			<label class="block mb-2" for="url-input">Enter stream URL:</label>
+			<input class="w-full px-3 py-2 rounded-lg border-2 border-gray-400 focus:outline-none focus:border-indigo-500" id="url-input" type="text" placeholder="Enter stream URL">
+			<button class="ml-2 px-4 py-2 bg-indigo-500 text-white font-semibold rounded-lg hover:bg-indigo-600" onclick="playStream()">Play</button>
+		</div>
+
+		<div class="mb-8">
+			<label class="block mb-2" for="radio-browser-select">Or select from Radio Browser:</label>
+			<select class="w-full px-3 py-2 rounded-lg border-2 border-gray-400 focus:outline-none focus:border-indigo-500" id="radio-browser-select"></select>
+			<button class="ml-2 px-4 py-2 bg-indigo-500 text-white font-semibold rounded-lg hover:bg-indigo-600" onclick="playRadioBrowserStream()">Play</button>
+		</div>
+
+		<button class="ml-2 px-4 py-2 bg-indigo-500 text-white font-semibold rounded-lg hover:bg-indigo-600" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+	</div>
+    <div class="absolute top-0 left-0 p-4">
+        <a href="index.html" class="px-4 py-2 bg-indigo-500 text-white font-semibold rounded-lg hover:bg-indigo-600">Go back to FYC</a>
+    </div>
+    <div class="fixed bottom-0 left-0 p-4">
+        <p class="text-sm text-gray-500">Made by: VR Http// Animations#0523</p>
+    </div>
+        
+	<script src="CodeRadioHijack.js"></script>
+	<script>
+		function toggleDarkMode() {
+			document.body.classList.toggle('dark-mode');
+		}
+	</script>
+
+</body>
+</html>
